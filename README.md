@@ -3,14 +3,19 @@
 
 # UNIT 1
 
-JavaScript DSA Practice
+# JavaScript DSA Practice
 
-A collection of JavaScript examples covering common DSA concepts, array operations, sorting algorithms, recursion, and problem-solving patterns.
+This repository contains my JavaScript practice for **Data Structures and Algorithms (DSA)**.
 
-1. Reverse String
+It covers basic problem-solving, arrays, objects, strings, sorting algorithms, recursion, and common JavaScript methods.
 
-Reverse a string without using built-in reverse methods.
+---
 
+## 1. Reverse String
+
+Reverse a string without using the built-in `reverse()` method.
+
+```javascript
 function reverseString(str) {
   let reversed = "";
 
@@ -23,11 +28,15 @@ function reverseString(str) {
 
 console.log(reverseString("hello"));
 // Output: "olleh"
+```
 
-2. Reverse Array
+---
 
-Reverse an array by iterating from the last element to the first.
+## 2. Reverse Array
 
+Reverse an array by looping from the last element to the first.
+
+```javascript
 function reverseArray() {
   let emp = ["PS", "JK", "NS", "RN"];
   let reversed = "";
@@ -41,11 +50,15 @@ function reverseArray() {
 
 console.log(reverseArray());
 // Output: "RNNSJKPS"
+```
 
-3. Reverse Object Values — Numeric Keys
+---
 
-An object with numeric keys can be treated similarly to an array.
+## 3. Reverse Object Values - Numeric Keys
 
+Use `Object.keys()` to get the keys and access the object values in reverse order.
+
+```javascript
 function reverseObjectValues() {
   let emp = {
     0: "PS",
@@ -66,15 +79,24 @@ function reverseObjectValues() {
 
 console.log(reverseObjectValues());
 // Output: "RNNSJKPS"
+```
 
-Object.keys()
+### Object.keys()
+
+```javascript
 Object.keys(emp);
+
+// Output:
 // ["0", "1", "2", "3"]
+```
 
-4. Reverse Object Values — Named Keys
+---
 
-Using Object.values() to get all values and then iterating in reverse.
+## 4. Reverse Object Values - Named Keys
 
+Use `Object.values()` to get all values and then loop through them in reverse order.
+
+```javascript
 function reverseObjectValues() {
   let emp = {
     first: "PS",
@@ -95,19 +117,29 @@ function reverseObjectValues() {
 
 console.log(reverseObjectValues());
 // Output: "RNNSJKPS"
+```
 
-Object.values()
+### Object.values()
+
+```javascript
 Object.values(emp);
-// ["PS", "JK", "NS", "RN"]
 
-5. Palindrome
+// Output:
+// ["PS", "JK", "NS", "RN"]
+```
+
+---
+
+## 5. Palindrome
 
 A palindrome is a word that reads the same forward and backward.
 
 Examples:
 
-madam → Palindrome
-hello → Not a palindrome
+- `madam` → Palindrome
+- `hello` → Not a palindrome
+
+```javascript
 function isPalindrome(str) {
   let reversed = str.split("").reverse().join("");
 
@@ -119,11 +151,15 @@ console.log("Palindrome (madam)", isPalindrome("madam"));
 
 console.log("Palindrome (hello)", isPalindrome("hello"));
 // false
+```
 
-6. Find Largest Number in an Array
+---
 
-Find the largest number without using Math.max().
+## 6. Find Largest Number in an Array
 
+Find the largest number without using `Math.max()`.
+
+```javascript
 function findLargest(arr) {
   let max = arr[0];
 
@@ -137,12 +173,17 @@ function findLargest(arr) {
 }
 
 console.log("findLargest", findLargest([5, 2, 8, 1, 9]));
+
 // Output: 9
+```
 
-7. Find Smallest Number in an Array
+---
 
-Find the smallest number without using Math.min().
+## 7. Find Smallest Number in an Array
 
+Find the smallest number without using `Math.min()`.
+
+```javascript
 function findSmallest(arr) {
   let min = arr[0];
 
@@ -156,12 +197,17 @@ function findSmallest(arr) {
 }
 
 console.log("findSmallest", findSmallest([5, 2, 8, 1, 9]));
-// Output: 1
 
-8. Count Occurrences of Each Element
+// Output: 1
+```
+
+---
+
+## 8. Count Occurrences of Each Element
 
 Count how many times each element appears in an array.
 
+```javascript
 function countOccurrences(arr) {
   let count = {};
 
@@ -182,18 +228,28 @@ console.log(
 
 // Output:
 // { 1: 1, 2: 2, 3: 4 }
+```
 
-Logic
-First occurrence → set value to 1
-Existing value   → increase count by 1
+### Logic
 
-9. Find Missing Number
+```text
+First occurrence → Set count to 1
+Existing element → Increase count by 1
+```
 
-Find the missing number from a sequence from 1 to N.
+---
 
-Formula
+## 9. Find Missing Number
+
+Find the missing number from a sequence starting from `1` to `N`.
+
+### Formula
+
+```text
 Sum of 1 to N = N × (N + 1) / 2
+```
 
+```javascript
 function missingNumber(arr) {
   let n = arr.length + 1;
 
@@ -213,11 +269,15 @@ console.log(
 );
 
 // Output: 3
+```
 
-10. Reduce Method
+---
 
-The reduce() method can be used to calculate the sum of array elements.
+## 10. Reduce Method
 
+The `reduce()` method can be used to calculate the sum of an array.
+
+```javascript
 let arr = [1, 2, 4];
 
 let arrRed = arr.reduce((a, b) => a + b);
@@ -225,17 +285,28 @@ let arrRed = arr.reduce((a, b) => a + b);
 console.log("Reduce arr", arrRed);
 
 // Output: 7
+```
 
-How it works
+### How it works
+
+```text
 1 + 2 = 3
 3 + 4 = 7
+```
 
-⭐ Part 1 — Sorting Algorithms
-11. Bubble Sort
-Easy Trick
+---
 
-Think of bubbles rising — bigger numbers gradually move to the end.
+# Part 1 - Sorting Algorithms
 
+## 11. Bubble Sort
+
+### Easy Trick
+
+Think of bubbles rising.
+
+The larger numbers gradually move toward the end of the array.
+
+```javascript
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - 1 - i; j++) {
@@ -258,18 +329,26 @@ console.log(
 
 // Output:
 // [2, 3, 4, 5, 8]
+```
 
-Time Complexity
+### Time Complexity
+
+```text
 Best Case:    O(n)
 Average Case: O(n²)
 Worst Case:   O(n²)
 Space:        O(1)
+```
 
-12. Selection Sort
-Easy Trick
+---
 
-Find the smallest number → put it at the front.
+## 12. Selection Sort
 
+### Easy Trick
+
+Find the smallest number and put it at the beginning.
+
+```javascript
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i;
@@ -296,20 +375,28 @@ console.log(
 
 // Output:
 // [2, 3, 4, 5, 8]
+```
 
-Time Complexity
+### Time Complexity
+
+```text
 Best Case:    O(n²)
 Average Case: O(n²)
 Worst Case:   O(n²)
 Space:        O(1)
+```
 
-13. Insertion Sort
-Easy Trick
+---
+
+## 13. Insertion Sort
+
+### Easy Trick
 
 Think about arranging playing cards in your hand.
 
-Take one card → find its correct position → insert it.
+Take one element and insert it into its correct position.
 
+```javascript
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
     let current = arr[i];
@@ -333,27 +420,42 @@ console.log(
 
 // Output:
 // [2, 3, 4, 5, 8]
+```
 
-Time Complexity
+### Time Complexity
+
+```text
 Best Case:    O(n)
 Average Case: O(n²)
 Worst Case:   O(n²)
 Space:        O(1)
+```
 
-⭐ Part 2 — Recursion
-What is Recursion?
+---
+
+# Part 2 - Recursion
+
+## What is Recursion?
 
 Recursion is when a function calls itself.
 
-A recursive function generally has:
+A recursive function usually contains:
 
-Base Case — stops the recursion.
-Recursive Case — calls the function again with a smaller/simpler input.
-14. Factorial
-Formula
+1. **Base Case** - Stops the recursion.
+2. **Recursive Case** - Calls the function again with a smaller problem.
+
+---
+
+## 14. Factorial
+
+### Formula
+
+```text
 5! = 5 × 4 × 3 × 2 × 1
    = 120
+```
 
+```javascript
 function factorial(n) {
   if (n === 1) {
     return 1;
@@ -365,20 +467,31 @@ function factorial(n) {
 console.log("Factorial", factorial(5));
 
 // Output: 120
+```
 
-Execution
+### Execution
+
+```text
 factorial(5)
 5 × factorial(4)
 5 × 4 × factorial(3)
 5 × 4 × 3 × factorial(2)
 5 × 4 × 3 × 2 × factorial(1)
-5 × 4 × 3 × 2 × 1
+
 = 120
+```
 
-15. Fibonacci
-Definition
+---
+
+## 15. Fibonacci
+
+### Definition
+
+```text
 fib(n) = fib(n - 1) + fib(n - 2)
+```
 
+```javascript
 function fib(n) {
   if (n <= 1) {
     return n;
@@ -390,42 +503,62 @@ function fib(n) {
 console.log("Fibonacci", fib(6));
 
 // Output: 8
+```
 
-Fibonacci Sequence
+### Fibonacci Sequence
+
+```text
 0, 1, 1, 2, 3, 5, 8, 13, ...
-
+```
 
 For example:
 
+```text
 fib(6) = 8
+```
 
-Quick Revision
-Problem	Main Concept
-Reverse String	Loop
-Reverse Array	Array + Loop
-Reverse Object	Object.keys() / Object.values()
-Palindrome	String manipulation
-Largest Number	Loop
-Smallest Number	Loop
-Count Occurrences	Object / Hash Map
-Missing Number	Mathematical formula
-Array Sum	reduce()
-Bubble Sort	Sorting
-Selection Sort	Sorting
-Insertion Sort	Sorting
-Factorial	Recursion
-Fibonacci	Recursion
-JavaScript Concepts Covered
-for loops
-for...of
-Arrays
-Objects
-Object.keys()
-Object.values()
-reduce()
-String manipulation
-Array destructuring
-Sorting algorithms
-Recursion
-Time complexity basics
-Problem-solving patterns
+---
+
+# Quick Revision
+
+| # | Problem | Concept |
+|---|---|---|
+| 1 | Reverse String | Loop |
+| 2 | Reverse Array | Array + Loop |
+| 3 | Reverse Object | `Object.keys()` |
+| 4 | Reverse Object Values | `Object.values()` |
+| 5 | Palindrome | String Manipulation |
+| 6 | Largest Number | Loop |
+| 7 | Smallest Number | Loop |
+| 8 | Count Occurrences | Object / Hash Map |
+| 9 | Missing Number | Mathematical Formula |
+| 10 | Array Sum | `reduce()` |
+| 11 | Bubble Sort | Sorting |
+| 12 | Selection Sort | Sorting |
+| 13 | Insertion Sort | Sorting |
+| 14 | Factorial | Recursion |
+| 15 | Fibonacci | Recursion |
+
+---
+
+# JavaScript Concepts Covered
+
+- Strings
+- Arrays
+- Objects
+- `for` loops
+- `for...of`
+- `Object.keys()`
+- `Object.values()`
+- `reduce()`
+- Array destructuring
+- Sorting algorithms
+- Recursion
+- Time complexity
+- Problem-solving techniques
+
+---
+
+## Goal
+
+Practice JavaScript DSA problems regularly and build a strong foundation for **coding interviews and problem solving**.
