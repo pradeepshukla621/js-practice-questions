@@ -356,7 +356,7 @@ fn();
 ### Output
 
 ```text
-HGHGHGHGHG
+SHYAM
 ```
 
 ### How it works
