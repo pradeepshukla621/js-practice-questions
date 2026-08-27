@@ -345,7 +345,7 @@ let user = {
 };
 
 let userDetails = {
-  name: "HGHGHGHGHG"
+  name: "SHYAM"
 };
 
 let fn = user.sayName.bind(userDetails);
