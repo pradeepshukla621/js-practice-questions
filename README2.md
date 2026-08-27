@@ -1,1 +1,55 @@
+// TOP INTERVIEW QUESTIONS (With Easy Solutions)
+
+// Q1: Reverse words in a sentence
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
+}
+
+console.log(reverseWords("I love JavaScript")); //JavaScript love I
+
+
+// Q2: Check Anagram
+// Two strings are anagram if they have same letters in any order.
+// Example: "listen" and "silent"
+function isAnagram(a, b) {
+  return a.split("").sort().join("") === b.split("").sort().join("");
+}
+
+console.log(isAnagram("listen", "silent")); // true
+
+
+// Q3: Remove duplicates from array
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+console.log(removeDuplicates([1,2,2,3,4,4,5]));
+
+// Q4: Find missing number from 1 to N
+function missingNumber(arr) {
+  let n = arr.length + 1;
+  let sum = (n * (n + 1)) / 2;
+  let arrSum = arr.reduce((a,b) => a + b, 0);
+  return sum - arrSum;
+}
+
+console.log(missingNumber([1,2,4,5])); // 3
+
+
+// Q5: Two Sum Problem
+// Goal: Find 2 numbers = target
+function twoSum(arr, target) {
+  let map = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let diff = target - arr[i];
+    if (map[diff] !== undefined) {
+      return [map[diff], i];
+    }
+    map[arr[i]] = i;
+  }
+}
+console.log(twoSum([2,7,11,15], 9)); // [0,1]
+
+
 
