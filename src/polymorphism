@@ -1,0 +1,32 @@
+// Parent Class
+class Animal {
+  makeSound() {
+    console.log("The animal makes a generic sound.");
+  }
+}
+
+// Subclass overriding the parent method
+class Dog extends Animal {
+  makeSound() {
+    console.log("Woof! Woof!");
+  }
+}
+
+// Another subclass overriding the same parent method
+class Cat extends Animal {
+  makeSound() {
+    console.log("Meow! Meow!");
+  }
+}
+
+// Using Polymorphism:
+// A single function can handle different object types as long as they share the method name
+function playAnimalSound(animal) {
+  animal.makeSound();
+}
+
+const myDog = new Dog();
+const myCat = new Cat();
+
+playAnimalSound(myDog); // Output: Woof! Woof!
+playAnimalSound(myCat); // Output: Meow! Meow!

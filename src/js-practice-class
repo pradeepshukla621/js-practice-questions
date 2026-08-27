@@ -1,0 +1,93 @@
+const numbers = [5, 12, 8, 130, 44];
+const result = numbers.filter((num) => { return num > 10});
+console.log(result);
+
+
+const users = [
+  { name: 'Alice', active: true },
+  { name: 'Bob', active: false },
+  { name: 'Charlie', active: true }
+];
+
+const activeUsers = users.filter(user => user.active);
+
+console.log(activeUsers);
+// [{ name: 'Alice', active: true }, { name: 'Charlie', active: true }]
+
+
+function add (a) {
+    return function (b) {
+        return console.log ("Curring add output :", a + b )
+    }
+}
+    
+    add(2)(4)
+    
+    
+    //regex exec
+var regex = /hello/;
+var result1 = regex.exec("hello world");
+console.log("regex exec: ", result1);  
+
+
+// regex test
+var regex = /hello/;
+console.log(regex.test("hello world"));  
+// Output: true
+console.log(regex.test("world"));  
+// Output: false
+
+var y = 234;
+var z = y;   // z gets a copy of y’s value
+
+y = 23;
+console.log(z); // 234 (z is unchanged)
+
+///####################################
+
+if (true) {
+  let a = 5;
+  const b = 10;
+}
+
+// console.log(a); // ❌ Error
+// console.log(b); // ❌ Erro
+
+if (true) {
+  var c = 15;
+}
+console.log(c); 
+
+//############################33
+
+var str = "Hello";
+
+console.log(str.charAt([0])); // "H"
+console.log(str.charAt(1)); // "e"
+console.log(str.charAt(4)); // "o"
+
+// ########### Inheritance
+
+class Animal {
+  constructor() {
+    this.speak(); // Call speak when an Animal is created
+  }
+
+  speak() {
+    console.log("Animal makes sound");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+// Example usage:
+const a = new Animal(); // Logs: Animal makes sound
+const d = new Dog();    // Logs: Animal makes sound
+d.bark();               // Logs: Woof!
+
+    
+    

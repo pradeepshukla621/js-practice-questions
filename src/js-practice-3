@@ -1,0 +1,117 @@
+function A () {
+    console.log("A is called");
+    return function B () {
+        return "sandeep"
+    } 
+}
+
+console.log(A());
+let returnOfA = A();
+console.log(returnOfA())
+
+
+
+
+***********
+
+
+function A () {
+    
+     function X () {
+        console.log("X")
+    } 
+    X();
+    
+    return function Y () {
+         console.log("Y")
+    } 
+    Y()
+    
+    function Z () {
+         console.log("Z")
+    } 
+    Z()
+}
+
+A();
+
+
+******************
+
+
+     function X () {
+        console.log("X")
+    } 
+  
+    
+     function Y () {
+         console.log("Y")
+    } 
+ 
+    
+    function Z () {
+         console.log("Z")
+    } 
+  
+  
+  function A(fn) {
+    console.log("A is called");
+    fn();
+  }
+
+A(X)
+
+
+******************
+// (this)   example 1
+
+
+userDetails = {
+    name: "San",
+    age: 20,
+    role: "developer",
+    
+    calAmount: function () {
+        console.log(this)
+    }
+}
+
+userDetails.calAmount()
+
+
+
+********************
+
+// (bind) example
+
+let user = {
+  name: "Pradeep",
+  sayName: function () {
+    console.log(this.name);
+  }
+};
+
+let userDetails = {
+    name:"SHYAM"
+}
+
+let fn = user.sayName.bind(userDetails);
+fn();
+
+
+
+/////////////////////////// CALL ,APPLY , BIND
+
+function ABC (age , fname) {
+    console.log(`Age ${age} and fname ${fname} and ${this.school}`)
+}
+
+let userSchool = {
+    school: "ABC"
+}
+
+// ABC(10, "Sandeep").bind(userSchool); // not working 
+// ABC.call(userSchool,10,"Sandeep")
+// ABC.apply(userSchool,[10,"Sandeep"])
+ABC.bind(userSchool,10, "Sandeep")()
+
